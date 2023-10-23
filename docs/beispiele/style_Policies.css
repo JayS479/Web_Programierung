@@ -173,10 +173,10 @@ main {
 
 main > section {
     display: flex;
-    justify-content: center;
+    justify-content:;
 }
 
-main > section.jumbotron {
+main > section.text-container {
     background-color: #606060;
     background-size: cover;
     background-position: center;
@@ -186,10 +186,13 @@ main > section.jumbotron {
 
     padding-top: 5em;
     padding-bottom: 5em;
+
+    
 }
 
-main > section.jumbotron > div {
-    max-width: 35em;
+main > section.text-container > div {
+    column-width: 100%; /* Breite jeder Spalte */
+  column-count: 1; /* Anzahl der Spalten */
 }
 
 main > section.jumbotron h2 {
@@ -202,6 +205,7 @@ main > section.jumbotron p {
     color: white;
     border: black;
 }
+
 
 /**
  * Fußbereich

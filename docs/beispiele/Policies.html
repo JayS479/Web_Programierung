@@ -1,261 +1,99 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
     <head>
-        <meta charset="utf-8" >
-        <title>W3C Named Colors mit Bootstrap Cards</title>
+        <meta charset="utf-8" />
+        <title>Aufgabe: npmjs.com – Musterlösung</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style_Policies.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <style>
             <!--
-                code {
-                    font-size  : 115%;
-                    color: black;
-                }
-
-                .farbflaeche {
-                    height: 5rem;
-                    border-bottom: 1px solid lightgrey;
-                }
-
-                .farbe-white   { background-color: white;   }
-                .farbe-silver  { background-color: silver;  }
-                .farbe-gray    { background-color: gray;    }
-                .farbe-black   { background-color: black;   }
-
-                .farbe-maroon  { background-color: maroon;  }
-                .farbe-red     { background-color: red;     }
-                .farbe-orange  { background-color: orange;  }
-                .farbe-yellow  { background-color: yellow;  }
-
-                .farbe-olive   { background-color: olive;   }
-                .farbe-lime    { background-color: lime;    }
-                .farbe-green   { background-color: green;   }
-                .farbe-aqua    { background-color: aqua;    }
-
-                .farbe-teal    { background-color: teal;    }
-                .farbe-navy    { background-color: navy;    }
-                .farbe-blue    { background-color: blue;    }
-                .farbe-purple  { background-color: purple;  }
-
-                .farbe-fuchsia { background-color: fuchsia; }
-
+                /* Regel um Breite von Container zu visualisieren */
+                /* .container-sm { background-color: yellow;} */
             -->
         </style>
     </head>
     <body>
-
-        <div class="container-sm text-center">
-
-            <h1 class="mt-3 mb-5">W3C Named Colors</h1>
-
-
-            <div class="row my-4 text-center">
-                <div class="d-block d-sm-none"           ><h5><b>Aktuelle Größenstufe:</b> <code>extra small (xs)</code></h5></div>
-                <div class="d-none d-sm-block d-md-none" ><h5><b>Aktuelle Größenstufe:</b> <code>small (sm)</code></h5></div>
-                <div class="d-none d-md-block d-lg-none" ><h5><b>Aktuelle Größenstufe:</b> <code>medium (md)</code></h5></div>
-                <div class="d-none d-lg-block d-xl-none" ><h5><b>Aktuelle Größenstufe:</b> <code>large (lg)</code></h5></div>
-                <div class="d-none d-xl-block"           ><h5><b>Aktuelle Größenstufe:</b> <code>extra large (xl)</code></h5></div>
-            </div>            
-
-
-            <div class="row"><!-- Start Zeile 1 -->
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-white card-img-top"></div><!-- card-img-top für abgerundete Ecken oben -->
-                        <div class="card-body">
-                            <h5 class="card-title">White</h5>
-                            <p class="card-text">RGB-Code: <code>#FFFFFF</code></p>
-                        </div>
-                    </div>
+        <!-- Kopfbereich mit Navigation und Suche -->
+        <header>
+            <nav class="max-width">
+                <div id="slogan">
+                    Justins erste Website
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-silver card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Silver</h5>
-                            <p class="card-text">RGB-Code: <code>#C0C0C0</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-gray card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Gray</h5>
-                            <p class="card-text">RGB-Code: <code>#808080</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-black card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Black</h5>
-                            <p class="card-text">RGB-Code: <code>#000000</code></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Ende Zeile 1 -->
+                <ul>
+                    <li>
+                        <a class="btn btn-primary" href="index.html">Startseite</a>
+                    </li>
+                    <li>
+                        <a  class="btn btn-primary" href="FotogallerieMitCarousel.html">Categories</a>
+                    </li>
+                    <li>
+                        <a  class="btn btn-primary" href="Help.html">Help</a>
+                    </li>
+                </ul>
+                <div class="d-grid gap-4">
 
 
-            <div class="row mt-2"><!-- Start Zeile 2 -->
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-maroon card-img-top"></div><!-- card-img-top für abgerundete Ecken oben -->
-                        <div class="card-body">
-                            <h5 class="card-title">Maroon</h5>
-                            <p class="card-text">RGB-Code: <code>#800000</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-red card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Red</h5>
-                            <p class="card-text">RGB-Code: <code>#FF0000</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-orange card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Orange</h5>
-                            <p class="card-text">RGB-Code: <code>#FFA500</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-yellow card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Yellow</h5>
-                            <p class="card-text">RGB-Code: <code>#FFFF00</code></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Ende Zeile 2 -->
-
-            
-            <div class="row mt-2"><!-- Start Zeile 3 -->
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-olive card-img-top"></div><!-- card-img-top für abgerundete Ecken oben -->
-                        <div class="card-body">
-                            <h5 class="card-title">Olive</h5>
-                            <p class="card-text">RGB-Code: <code>#808000</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-lime card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Lime</h5>
-                            <p class="card-text">RGB-Code: <code>#00FF00</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-green card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Green</h5>
-                            <p class="card-text">RGB-Code: <code>#008000</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-aqua card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Aqua</h5>
-                            <p class="card-text">RGB-Code: <code>#00FFFF</code></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Ende Zeile 3 -->            
-
-
-            <div class="row mt-2"><!-- Start Zeile 4 -->
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-teal card-img-top"></div><!-- card-img-top für abgerundete Ecken oben -->
-                        <div class="card-body">
-                            <h5 class="card-title">Teal</h5>
-                            <p class="card-text">RGB-Code: <code>#008080</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-navy card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Navy</h5>
-                            <p class="card-text">RGB-Code: <code>#000080</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-blue card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blue</h5>
-                            <p class="card-text">RGB-Code: <code>#0000FF</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-purple card-img-top"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Purple</h5>
-                            <p class="card-text">RGB-Code: <code>#800080</code></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Ende Zeile 4 -->   
-
-
-            <div class="row mt-2"><!-- Start Zeile 5 -->
-
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="farbflaeche farbe-fuchsia card-img-top"></div><!-- card-img-top für abgerundete Ecken oben -->
-                        <div class="card-body">
-                            <h5 class="card-title">Fuchsia</h5>
-                            <p class="card-text">RGB-Code: <code>#FF00FF</code></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- Ende Zeile 5 -->   
-      
         </div>
+            </nav>
 
-        <br>
+            <div class="line"></div>
 
+            <div id="searchbar" class="max-width">
+                <input type="text" placeholder="Search packages" />
+                <button class="black">Search</button>
+                <button class="white">Sign Up</button>
+                <button class="transparent">Sign In</button>
+            </div>
+        </header>
+
+        <!-- Hauptbereich mit dem Jumbotron -->
+        <main>
+            <section class="text-container">
+                <div>
+                    
+<h1>Qui velit quidem et commodi iste quo illum amet. </h1><p>Lorem ipsum dolor sit amet. Ut numquam oditQui eius ut distinctio consequatur? Et reiciendis enim non voluptates eaqueAut molestias ea molestiae dolorem hic voluptas quia. Cum internos tenetur <strong>Ex consequuntur non laborum assumenda ad distinctio sint</strong> aut voluptas odit et dolorum laboriosam! Id architecto omnis eos ullam magniNon perferendis. Qui laboriosam quaeratAut quia ut asperiores nihil vel illum quibusdam et quia quisquam. Quo obcaecati provident <em>Qui facilis ut libero delectus</em>! Est repudiandae dolores est explicabo molestiasnam unde quo quia assumenda ea veritatis animi. Id nobis evenietIn eligendi quo quos eveniet vel neque officiis sit molestiae ullam. Est excepturi delectusAut enim id inventore maiores qui sapiente reprehenderit qui itaque doloribus ut voluptatem corporis. Eum molestias doloremEt suscipit ut quae corrupti sit sint tempore et expedita eligendi. Et fugit doloremEum aliquid est ipsam illum qui temporibus nesciunt. Et recusandae voluptas eum eius doloresUt incidunt ut tenetur molestiae eos totam consequatur ad dolorem odio. A distinctio quis cum harum veroEt nobis eum nemo unde et pariatur Quis aut nobis veniam. Id quam architecto sit consectetur voluptatenon quia et dignissimos dolores At illum aspernatur! </p><ol><li>Ut rerum quasi non consequatur asperiores sit magnam culpa. </li><li>Eum voluptatem voluptate qui aspernatur voluptas aut odit totam. </li><li>Quo molestias consequatur sit commodi magni. </li><li>Id maiores corrupti rem sint facere est minus voluptatibus. </li></ol><dl><dt><dfn>Et porro laboriosam. </dfn></dt><dd>Est consequuntur quia aut aspernatur officia qui animi explicabo. </dd><dt><dfn>Qui animi illum nam quisquam deleniti? </dfn></dt><dd>Ea ipsum inventore cum quae beatae eum unde fugiat qui enim iure. </dd><dt><dfn>Aut ratione quam. </dfn></dt><dd>Qui aliquam quaerat qui nihil laborum? </dd></dl><h2>Quo praesentium harum et voluptas omnis? </h2><p>Sit veritatis delectusHic error est quas tempora eos omnis commodi vel ipsum voluptas? Et maxime blanditiis <strong>Sed dolorum</strong> est omnis pariatur. Et dolore necessitatibus ut ullam necessitatibusUt voluptas qui totam molestiae non voluptas omnis et galisum reprehenderit. Sit odio internos ad sapiente evenietEst fugiat eum culpa quisquam 33 quis voluptas ea temporibus voluptatum ut dolore dolorum. Non obcaecati voluptate non beatae eiusut galisum et obcaecati dignissimos. Qui quia expeditaEt minus et unde optio in nisi doloremque ut iste quam aut molestiae blanditiis. Ab earum quiaQui galisum et ipsa laudantium rem dolores veniam. Ut magni adipisci <em>Id nisi quo numquam voluptatem ex voluptatem accusantium</em> id incidunt odit quo temporibus nobis et optio ducimus. 33 magni sintEt aspernatur eos dicta dolorem in magni possimus qui molestiae molestias. Sed necessitatibus numquam33 autem ut ipsa error in maxime laboriosam aut quia impedit. Et recusandae undeAb voluptate ea consectetur rerum hic ullam deserunt. Rem galisum itaque33 sint et iste veniam est ipsum optio. Eum deleniti corrupti est mollitia quiaAut aperiam sed fuga eveniet. Non odio laborumEt sint est animi incidunt non adipisci error non cupiditate tempore et facilis adipisci. </p><ul><li>Eos enim ducimus sit laboriosam error eos sint iusto est ullam fugiat! </li><li>Et fugit nihil 33 ratione enim vel dolor sint non labore iusto. </li><li>Qui perspiciatis dignissimos At mollitia labore ex inventore sapiente? </li><li>Qui nemo internos qui officiis architecto est voluptatibus quod? </li><li>Quo sunt explicabo sed autem molestiae. </li><li>Eum officia rerum vel molestiae magni vel tempora obcaecati ut pariatur dolor. </li></ul><blockquote cite="https://www.loremipzum.com">Non blanditiis vitae in blanditiis pariatur sit quasi officia et quasi praesentium vel consectetur porro nam dolorem Quis. </blockquote><h3>Id doloremque nihil non fugiat magni. </h3><p>A praesentium omnis aut assumenda consequaturQui nihil qui assumenda dolorem non adipisci deleniti in officia laboriosam et eligendi eaque? Et reiciendis corrupti qui officiis nesciuntNon dolorem et reiciendis harum hic debitis rerum aut possimus sint est officia voluptates? Qui dolor reprehenderit vel galisum rerumQui tempora aut maxime recusandae! Aut ipsum nihil <em>Sed voluptas ea illum magnam aut iste esse</em> est dolores officia ea laboriosam sunt ad necessitatibus commodi? Qui quam enim cum modi reprehenderiteum recusandae et quas veniam. Quo magni aliquid aut dicta temporibusAut voluptatem aut repellendus quae 33 commodi pariatur ut voluptatem tempora 33 sint alias. Cum recusandae sapienteEt omnis sed asperiores asperiores nam aliquam dicta et velit blanditiis et quaerat delectus ut maxime impedit! Non quaerat cumqueEt voluptas et quas dicta ut eveniet similique aut illo atque. </p>
+                  
+                </div>
+        </main>
+
+        <!-- Fußbereich mit weiterer Navigation -->
+        <footer>
+            <div class="max-width">
+                <ul>
+                    <li class="bold">
+                        Support
+                    </li>
+                    <li>
+                        <a href="Help.html">
+                            Help
+                        </a>
+                    </li>
+                 </ul>
+
+                <ul>
+                    <li class="bold">
+                        Company
+                    </li>
+                    <li>
+                        <a href="About.html">
+                            About
+                        </a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li class="bold">
+                        Terms &amp; Policies
+                    </li>
+                    <li>
+                        <a href="Policies.html">
+                            Policies
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
