@@ -36,13 +36,13 @@ html {
      * Element ein Farbverlauf aus Hintergrund gegeben wird, der dadurch
      * automatisch die gesamte Seite ausfüllt. Der eigentliche Inhalt der
      * Seite im <body> wird durch den Flexbox-Algorithmus so angeordnet,
-     * dass dieser mindestens den gesamten Bildschirm abzüglich 0.6em Padding
+     * dass dieser mindestens den gesamten Bildschirm abzüglich 0.6em Paddings
      * oben und unten ausfüllt, selbst wenn der <body> gar keinen Inhalt
      * besitzt. Die Hintergrundfarbe des <body> wird daher auf weiß gesetzt,
      * um den Farbverlauf in der Mitte zu überdecken.
      */
-    background: rgb(221,145,17);
-    background: linear-gradient(90deg, rgba(221,145,17,1) 0%, rgba(255,9,28,1) 45%, rgba(250,0,255,1) 100%);
+    background: rgb(48, 221, 17);
+    background: linear-gradient(90deg, rgb(17, 221, 211) 0%, rgb(9, 132, 255) 45%, rgb(21, 255, 0) 100%);
 
     min-height: 100%;
     padding-top: 0.6em;

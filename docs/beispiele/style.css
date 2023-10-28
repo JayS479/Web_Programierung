@@ -41,8 +41,8 @@ html {
      * besitzt. Die Hintergrundfarbe des <body> wird daher auf weiß gesetzt,
      * um den Farbverlauf in der Mitte zu überdecken.
      */
-    background: rgb(221,145,17);
-    background: linear-gradient(90deg, rgba(221,145,17,1) 0%, rgba(255,9,28,1) 45%, rgba(250,0,255,1) 100%);
+     background: rgb(17, 112, 221);
+     background: linear-gradient(90deg, rgb(85, 221, 17) 0%, rgb(255, 9, 144) 45%, rgb(0, 60, 255) 100%);
 
     min-height: 100%;
     padding-top: 0.6em;
