@@ -1,23 +1,29 @@
 
-    <script>
-        // Dummy JSON-Daten als JavaScript-Objekt
-        let variable dummyData = {
-            name: "John Doe",
-            age: 30,
-            email: "johndoe@example.com",
-            isStudent: false,
-            hobbies: ["Reading", "Hiking", "Cooking"],
-            address: {
-                street: "123 Main St",
-                city: "Anytown",
-                zipCode: "12345"
-            }
-        };
 
-        // JSON-Text erstellen
-        let variable jsonText = JSON.stringify(dummyData, null, 2);
+// HTML-Elemente erstellen und Daten einfügen
+const dataContainer = document.getElementById("data-container");
 
-        // JSON-Text in HTML-Element einfügen
-        var jsonContainer = document.getElementById('json-data');
-        jsonContainer.textContent = jsonText;
-    </script>
+for (const key in jsonData) {
+    if (jsonData.hasOwnProperty(key)) {
+        const dataRow = document.createElement("div");
+        dataRow.innerHTML = `<strong>${key}:</strong> ${jsonData[key]}`;
+        dataContainer.appendChild(dataRow);
+    }
+}
+let userid = 6;
+let url = 'https://dummyjson.com/users/' + userid + '/todos';
+fetch(url)
+.then(res => res.json())
+.then(async (data) => {
+    await createPost(data);
+});
+
+
+async function createPost(posts){
+    posts.todos[0].title 
+
+}
+
+
+
+

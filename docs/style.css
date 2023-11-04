@@ -179,7 +179,6 @@ main > section {
 main > section.jumbotron {
     background-image: url(One_Piece_WP.webp);
     background-size: cover;
-    background-position: center;
 
     color: white;
     text-align: center;
