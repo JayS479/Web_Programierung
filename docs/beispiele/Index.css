@@ -204,7 +204,7 @@ main > section.jumbotron p {
 }
 
 main > section.narrow > div {
-    display: flex;
+    display: contents;
     font-weight: bold;
     font-size: 180%;
     padding: 10em
@@ -217,8 +217,16 @@ main > section.narrow > div {
 }
 main > section.narrow > div > div {
     margin: 1em;
-    background-color: yellow;
-    
+
+}
+.search-result{
+    display: contents;
+    font-weight: bold;
+    font-size: 180%;
+    padding: 10em;
+    max-width: 15em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 /**
  * Fußbereich
