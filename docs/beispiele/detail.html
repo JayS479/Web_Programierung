@@ -1,156 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Aufgabe: npmjs.com – Musterlösung</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Index.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        
-        <style>
-            <!--
-                /* Regel um Breite von Container zu visualisieren */
-                /* .container-sm { background-color: yellow;} */
-            -->
-        </style>
-    </head>
-<body>
-        <!-- Kopfbereich mit Navigation und Suche -->
-        <header>
-            <nav class="max-width">
-                <div id="slogan">
-                    Justins erste Website
-                </div>
-                <ul>
-                    <li>
-                        <a class="btn btn-primary" href="INDEX.html">Startseite</a>
-                    </li>
-                    
-                </ul>
-                <div class="d-grid gap-4">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aufgabe: npmjs.com – Musterlösung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
+    <style>
+      <!--
+          /* Regel um Breite von Container zu visualisieren */
+          /* .container-sm { background-color: yellow;} */
+      -->
+    </style>
+  </head>
+  <body>
+    <!-- Kopfbereich mit Navigation und Suche -->
+    <header>
+      <nav class="max-width">
+        <div id="slogan">Justins erste Website</div>
+        <ul>
+          <li>
+            <a class="btn btn-primary" href="INDEX.html">Startseite</a>
+          </li>
+        </ul>
+        <div class="d-grid gap-4"></div>
+      </nav>
 
+      <div class="line"></div>
+
+      <div class="max-width">
+        <input type="text" id="searchbar" placeholder="Search packages" />
+        <ul id="userid"></ul>
+        <button id="search" class="black">Suchen</button>
+      </div>
+    </header>
+
+    <!-- Hauptbereich mit dem Jumbotron -->
+    <main>
+      <section class="narrow">
+        <div id="resultsContainer">
+          <!-- Hier werden die JSON-Daten angezeigt -->
+          Test
         </div>
-            </nav>
 
-            <div class="line"></div>
-                
-            <div  class="max-width">
-                <input type="text" id="searchbar" placeholder="Search packages" />
-                <ul id="userid"></ul>
-                <button id="search" class="black">Suchen</button>
-                                 
+        <script src="Index.js"></script>
+      </section>
+      <section>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="..." class="d-block w-100" alt="..." />
             </div>
-            
-    
-    
-        </header>
-
-        <!-- Hauptbereich mit dem Jumbotron -->
-        <main>
-                 
-            
-
-            <section class="narrow">
-                <div id="resultsContainer">
-                <!-- Hier werden die JSON-Daten angezeigt -->
-                Test
-                </div>
-    
-    <script src="detail.js"></script> 
-</section>
-<section>
-
-<div id="carouselMitFotos" class="carousel slide my-5"><!-- Die ID wird von den beiden Buttons mit dem Attribut data-bs-target referenziert -->
-
-<div class="carousel-inner">
-
-  <div class="carousel-item active">
-    <img src="bilder-KA/bild_1.jpg" class="d-block w-100" alt="Bild 1">
-    <p class="text-center mt-2 small">
-        <a href="https://pixabay.com/images/id-3257297" target="_blank">Foto 3257297</a>
-        von Pixabay-Nutzer
-        <a href="https://pixabay.com/users/maxmann-665103/" target="_blank">maxmann</a>,
-        zugeschnitten
-    </p>
-  </div>
-
-  <div class="carousel-item">
-    <img src="bilder-KA/bild_2.jpg" class="d-block w-100" alt="Bild 2">
-    <p class="text-center mt-2 small">
-        <a href="https://pixabay.com/images/id-4400662/" target="_blank">Foto 4400662</a>
-        von Pixabay-Nutzer
-        <a href="https://pixabay.com/users/mylene2401-10328767/" target="_blank">Mylene2401</a>
-    </p>
-  </div>
-
-  <div class="carousel-item">
-    <img src="bilder-KA/bild_3.jpg" class="d-block w-100" alt="Bild 3">
-    <p class="text-center mt-2 small">
-        <a href="https://pixabay.com/images/id-2521891/" target="_blank">Foto 2521891</a>
-        von Pixabay-Nutzer
-        <a href="https://pixabay.com/users/dlohner-4631193/" target="_blank">dlohner</a>,
-        Höhe um 2px gestretcht
-    </p>
-  </div>
-
-</div>
-
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselMitFotos" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Vorheriges</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselMitFotos" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Nächstes</span>
-</button>
-</div>
-</section>
-
- 
-
-        </main>
-
-
-        <!-- Fußbereich mit weiterer Navigation -->
-        <footer>
-            <div class="max-width">
-                <ul>
-                    <li class="bold">
-                        Hilfe
-                    </li>
-                    <li>
-                        <a href="Help.html">
-                            Hilfe
-                        </a>
-                    </li>
-                 </ul>
-
-                <ul>
-                    <li class="bold">
-                        Unternehmen
-                    </li>
-                    <li>
-                        <a href="About.html">
-                            Infos
-                        </a>
-                    </li>
-                </ul>
-
-                <ul>
-                    <li class="bold">
-                        Richtlinien
-                    </li>
-                    <li>
-                        <a href="Policies.html">
-                            Richtlinien
-                        </a>
-                    </li>
-                </ul>
+            <div class="carousel-item">
+              <img src="..." class="d-block w-100" alt="..." />
             </div>
-            
-        </footer>
-    </body>
+            <div class="carousel-item">
+              <img src="..." class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Fußbereich mit weiterer Navigation -->
+    <footer>
+      <div class="max-width">
+        <ul>
+          <li class="bold">Hilfe</li>
+          <li>
+            <a href="Help.html"> Hilfe </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="bold">Unternehmen</li>
+          <li>
+            <a href="About.html"> Infos </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="bold">Richtlinien</li>
+          <li>
+            <a href="Policies.html"> Richtlinien </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>

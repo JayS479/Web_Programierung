@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        
+        <script src="Index.js"></script> 
         <style>
             <!--
                 /* Regel um Breite von Container zu visualisieren */
@@ -29,9 +29,7 @@
                     </li>
                 </ul>
                 <div class="d-grid gap-4">
-
-
-        </div>
+            </div>
             </nav>
 
             <div class="line"></div>
@@ -40,7 +38,6 @@
                 <input type="text" id="searchbar" placeholder="Hier Suchbegriff eingeben" />
                 <ul id="userid"></ul>
                 <button id="search" class="black">Suchen</button>
-                                 
             </div>
             
     
@@ -49,26 +46,38 @@
 
         <!-- Hauptbereich mit dem Jumbotron -->
         <main>
-            <section class="jumbotron">
-                <div>
-                    <h1>
-                        Deine ToDos
-                    </h1>
-                    <p>
-                        Falls welche fehlen liegt es an dir.
-                    </p>
+
+            <div class="container-fluid">
+                <div id="resultsContainer">
+                    <img src="bilder-KA/bild_2.jpg" class="d-block w-50 mx-auto" alt="Bild 2">
+                    <p class="text-center">Hier steht ein Text</p>
                 </div>
-            </section>
+                <div id="resultsContainer">
+                    <img src="bilder-KA/bild_2.jpg" class="d-block w-50 mx-auto" alt="Bild 2">
+                    <p class="text-center">Hier steht ein Text</p>
+                </div>
+                <div id="resultsContainer">
+                    <img src="bilder-KA/bild_2.jpg" class="d-block w-50 mx-auto" alt="Bild 2">
+                    <p class="text-center">Hier steht ein Text</p>
+                </div>
+            </div>
+
+            
+        
+            
+            <div class="jumbotron">
+                <h1>
+                        Deine ToDos
+                </h1>
+                <p>
+                    Falls welche fehlen liegt es an dir.
+                </p>
+            </div>
+            
         
             
 
-            <section class="narrow">
-                <div id="resultsContainer">
-                <!-- Hier werden die JSON-Daten angezeigt -->
-                </div>
-    
-    <script src="Index.js"></script> 
-</section>
+            
 
  
 

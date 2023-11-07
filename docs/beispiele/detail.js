@@ -1,25 +1,32 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userID = urlParams.get("id");
 document.addEventListener("DOMContentLoaded", function () {
+
   const searchResults = document.getElementById("resultsContainer"); //Referenzen zu den HTML-Elementen
-  const searchInput = document.getElementById("searchbar");
-  const searchButton = document.getElementById("search");
 
-  let products = []; // Hier speichern wir alle Produkte, die wir von der API erhalten
   const apiUrl = "https://dummyjson.com/products"; //URL der API, von der die Daten abgerufen werden sollen
-  fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json(); //Antwort in JSON konvertieren
-    })
-    .then((data) => {
-      products = data.products; // Speichere die Daten in der products-Variable
-    })
-    .catch((error) => {
-      console.error("Fehler beim Abrufen der Daten:", error);
-    });
+  let url = `https://dummyjson.com/users/${userID}/products`;
 
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        
 
+        // Lösche den Container-Inhalt, um vorherige Suchergebnisse zu entfernen
+        dataContainer.innerHTML = "";
+
+        if (data.todos) {
+          data.todos.forEach((todo) => {
+            const todoItem = document.createElement("div");
+            todoItem.textContent = `ID: ${todo.id}, Todo: ${todo.todo}`;
+            dataContainer.appendChild(todoItem);
+          });
+        } else {
+          dataContainer.textContent = "Keine Todos gefunden.";
+        }
+
+  
 
   // Funktion zum Ausführen der Suche
   function performSearch() {
@@ -33,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchButton.addEventListener("click", performSearch);
   // Event-Listener für die Eingabe im Suchfeld
-// searchInput.addEventListener("input", performSearch);
+  // searchInput.addEventListener("input", performSearch);
   // Funktion zum Navigieren zur Detailseite
   function navigateToDetailPage(productId) {
     window.location.href = `detail.html?id=${productId}`;
@@ -70,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
     searchResults.appendChild(resultList); // Füge die Ergebnisliste zu den Suchergebnissen hinzu
   }
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleMenuButton = document.getElementById("toggleMenu");

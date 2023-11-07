@@ -98,6 +98,7 @@ a:hover {
 /**
  * Kopfbereich
  */
+ 
 header > * {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -167,6 +168,10 @@ header nav li {
 /**
  * Hauptbereich
  */
+ #carouselMitFotos{
+    
+    height: 20px;
+ }
 main {
     flex-grow: 1;
 }
@@ -176,11 +181,11 @@ main > section {
     justify-content: center;
 }
 
-main > section. carousel-inner {
+main > section.carousel-inner > div > div {
     display: flex;
     justify-content: center;
-    width: 20em;
-    height: 5em;
+    width: 2px;
+    height: 2px;
     max-width: 5%;
 }
 
