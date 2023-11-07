@@ -168,6 +168,12 @@ header nav li {
 /**
  * Hauptbereich
  */
+ .container-fluid{
+    background-color: red;
+ }
+main > div > div >div{
+    height: 2px;
+ }
  #carouselMitFotos{
     
     height: 20px;
