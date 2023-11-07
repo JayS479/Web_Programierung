@@ -176,6 +176,14 @@ main > section {
     justify-content: center;
 }
 
+main > section. carousel-inner {
+    display: flex;
+    justify-content: center;
+    width: 20em;
+    height: 5em;
+    max-width: 5%;
+}
+
 main > section.jumbotron {
     
     background-position: center;
@@ -206,7 +214,8 @@ main > section.jumbotron p {
 main > section.narrow > div {
     display: contents;
     font-weight: bold;
-    font-size: 180%;
+    font-size: 100%;
+    
     padding: 10em
 
     max-width: 15em;
@@ -217,6 +226,7 @@ main > section.narrow > div {
 }
 main > section.narrow > div > div {
     margin: 1em;
+    width: 50%;
 
 }
 .search-result{
