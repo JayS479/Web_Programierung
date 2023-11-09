@@ -168,9 +168,7 @@ header nav li {
 /**
  * Hauptbereich
  */
- .container-fluid{
-    background-color: red;
- }
+
 main > div > div >div{
     height: 2px;
  }
@@ -240,15 +238,24 @@ main > section.narrow > div > div {
     width: 50%;
 
 }
+
 .search-result{
-    display: contents;
-    font-weight: bold;
-    font-size: 180%;
-    padding: 10em;
-    max-width: 15em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(1);
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    
 }
+.search-result img{
+    max-width: 100%;
+    height: auto;
+    
+}
+
+
+
+
 /**
  * Fußbereich
  */
