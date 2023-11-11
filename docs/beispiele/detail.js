@@ -22,6 +22,7 @@ const productContainer = document.createElement("div");
 const picContainer = document.createElement("div");
 const textContainer = document.createElement("div");
 productContainer.classList.add("detail-result"); // CSS-Klasse für das Suchergebnis hinzufügen
+titleContainer.classList.add("detail-result"); // CSS-Klasse für das Suchergebnis hinzufügen
 
 // Erstelle ein Bilder-Carousel-Element
 for (let i = 0; i < product.images.length-1; i++){
@@ -60,8 +61,8 @@ imgElement.alt = "Product Image";
 imgElement.style.width = "30em"; // Setze die Breite des Bildes nach Bedarf
 
 // Erstelle ein Element für den Titel des Produkts
-const titleElement = document.createElement("h2");
-titleElement.textContent = `Titel: ${product.title}`;
+const titleElement = document.createElement("h1");
+titleElement.textContent = `${product.title}`;
 
 //Füge Description ein
 const descriptionElement = document.createElement("h2");
@@ -69,14 +70,14 @@ descriptionElement.textContent = `Beschreibung: ${product.description}`;
 
 //Füge Description ein
 const priceElement = document.createElement("h2");
-priceElement.textContent = `Preis: ${product.price}`;
+priceElement.textContent = `Preis: ${product.price}€`;
 
 //Füge Description ein
 const brandElement = document.createElement("h2");
 brandElement.textContent = `Marke: ${product.brand}`;
 
 // Füge das Bild-Element und den Titel dem Produktcontainer hinzu
-picContainer.appendChild(imgElement);
+
 productContainer.appendChild(titleElement);
 productContainer.appendChild(descriptionElement);
 productContainer.appendChild(priceElement);
@@ -85,7 +86,9 @@ productContainer.appendChild(brandElement);
 
 // Füge den Produktcontainer dem Hauptcontainer auf der Seite hinzu
 dataContainer.appendChild(productContainer);
-imgContainer.appendChild(picContainer);
+
+
+
 
 })
 .catch((error) => {
@@ -109,13 +112,13 @@ for (let i = 0; i < cart.products.length; i++){
 
     // Erstelle ein Element für den Titel des i-ten Produkts
     const titleElement = document.createElement("h2");
-    titleElement.textContent = `Titel: ${cart.products[i].title}`;
+    titleElement.textContent = `${cart.products[i].title}`;
     // Erstelle ein Element für den Preis des i-ten Produkts
     const priceElement = document.createElement("h2");
-    priceElement.textContent = `Preis: ${cart.products[i].price}`;
+    priceElement.textContent = `Preis: ${cart.products[i].price}€`;
     // Erstelle ein Element für die Menge des i-ten Produkts
     const quantityElement = document.createElement("h2");
-    quantityElement.textContent = `Anzahl: ${cart.products[i].quantity}`;
+    quantityElement.textContent = `Anzahl: ${cart.products[i].quantity} Stk.`;
 
 
 

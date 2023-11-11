@@ -200,7 +200,7 @@ main > section.jumbotron > div {
     max-width: 35em;
 }
 
-main > section.jumbotron h1 {
+main > section.jumbotron h2 {
     font-size: 200%;
     color: rgb(0, 0, 255);
     border: black;
@@ -210,7 +210,19 @@ main > section.jumbotron p {
     color: fuchsia;
     border: black;
 }
+/* FAQ-Bereich */
 
+
+.faq {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between; 
+}
+
+.faq div {
+margin-bottom: 20px; 
+box-sizing: border-box;
+}
 main > section.narrow > div {
     display: contents;
     font-weight: bold;
@@ -245,13 +257,16 @@ main > section.narrow > div > div {
     position: center; /* Positionierung center setzen */
     z-index: 1; /* Start-Z-Index */
     text-align: center;
-    
+    justify-content: center;
+    height: 150px;
+          
     
     
     }
 .search-result img{
     max-width: 100%;
     height: auto;
+    max-height: 120px;
     
     
 }
@@ -275,9 +290,33 @@ main > section.narrow > div > div {
 #bildContainer{
     background-color: blue;
 }
+.detcontainer{
+    margin-top: 25px;
+}
 #detailContainer{
-    background-color: red;
+    
     text-align: left;
+    max-width: 100%;
+    padding-right: 10%;
+    
+    
+}
+.textcontainer{
+    text-align: left;
+    border: 5px solid #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    box-sizing:content-box;
+    
+}
+.textcontainer h1{
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.textcontainer h2{
+    text-align: left;
+    
+    margin-bottom: 15px;
 }
 #resultsContainer .search-result:hover {
     transform: scale(1.05);
@@ -302,14 +341,42 @@ a.carousel-control-prev{
     width: 8%;  
 }
 
+.carousel-inner{
+    margin-bottom: 25px;    
+}
+#carouselInner{
+    width: auto;
+    height: 400px;
+}
+
+.shoppingcart  {
+    font-size: 25pt;
+    margin-top: 25px;
+    
+    
+}
+#cartContainer div{
+    flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+padding: 0.2em;
+margin: 0.25em;
+border: 1px solid rgb(200, 200, 200);
+background: white;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+box-sizing: border-box;
+overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
+transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
+position: center; /* Positionierung center setzen */
+z-index: 1; /* Start-Z-Index */
+text-align: center;
+}
+
 /* Media Query für Bildschirmbreiten größer oder gleich 768px */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
            
         .search-result {
-            
-            max-width: 300px; /* Ändern Sie die maximale Breite nach Bedarf */
+            max-width: 450px; /* Ändern Sie die maximale Breite nach Bedarf */
             width: 100%;
-            height: 200px; /* Ändern Sie die Höhe nach Bedarf */
+            height: 250px; /* Ändern Sie die Höhe nach Bedarf */
             margin: 10px;
             justify-content: center;
             box-sizing: border-box;
@@ -321,16 +388,14 @@ a.carousel-control-prev{
             display: grid;
             grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
             gap: 75px;
+            margin-top: 10%;
+            margin-bottom: 20%;
+            height: 400px;
             
         }
-        
-        .textcontainer{
-            background-color: red;
-            text-align: left;
-            border: 5px solid #ccc;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-            box-sizing:content-box;
-            
+        #carouselInner{
+            width: auto;
+            height: 400px;
         }
 
         #resultsContainer img{
@@ -348,6 +413,32 @@ a.carousel-control-prev{
         flex-wrap: wrap;
         justify-content: center;
         }
+        #cartContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px; /* Optional: Fügt Abstand zwischen den Spalten hinzu */
+            width: auto;
+        }
+        
+        #cartContainer div{
+            flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+            padding: 0.2em;
+            margin: 0.25em;
+            border: 1px solid rgb(200, 200, 200);
+            background: white;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+            box-sizing: border-box;
+            overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
+            transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
+            position: center; /* Positionierung center setzen */
+            z-index: 1; /* Start-Z-Index */
+            text-align: center;
+        }
+        .shoppingcart  {
+            font-size: 40pt;
+        
+        }
+        
         
     }
     
