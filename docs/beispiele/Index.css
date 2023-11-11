@@ -242,6 +242,7 @@ main > section.narrow > div > div {
 
 }
 
+
 .search-result {
     display: grid;
     grid-template-columns: repeat(1);
@@ -365,10 +366,31 @@ box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 box-sizing: border-box;
 overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
 transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
-position: center; /* Positionierung center setzen */
+/*position: center; /* Positionierung center setzen */
 z-index: 1; /* Start-Z-Index */
 text-align: center;
+position: relative;
+justify-content: space-between;
+height: auto;
 }
+#cartContainer div div{
+    background-color: rgba(233, 233, 233, 0.877);
+    margin: 2px;
+    
+    margin-top: 10%;
+    position: absolute;
+  bottom: 0;
+  left: 0; /* Optional: Setzt left auf 0, wenn der Container von links positioniert werden soll */
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px; /* Optional: Fügt Raum um den Inhalt hinzu */
+  box-sizing: border-box;
+}
+#cartContainer h5{
+    background-color: red;
+    margin: 2px;
+}
+
 
 /* Media Query für Bildschirmbreiten größer oder gleich 768px */
 @media (min-width: 800px) {
@@ -415,15 +437,16 @@ text-align: center;
         }
         #cartContainer {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 10px; /* Optional: Fügt Abstand zwischen den Spalten hinzu */
-            width: auto;
+            
         }
         
         #cartContainer div{
             flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
             padding: 0.2em;
             margin: 0.25em;
+            margin-right: 10px;
             border: 1px solid rgb(200, 200, 200);
             background: white;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
@@ -433,7 +456,12 @@ text-align: center;
             position: center; /* Positionierung center setzen */
             z-index: 1; /* Start-Z-Index */
             text-align: center;
+            
+            height: auto;
+            
         }
+        
+        
         .shoppingcart  {
             font-size: 40pt;
         

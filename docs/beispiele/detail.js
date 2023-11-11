@@ -102,6 +102,13 @@ fetch(urlCart)
 // Erstelle einen Container für den Warenkorb
 
 
+    if (productID>=20) {
+        
+        const meldungElement = document.createElement("h5");
+        meldungElement.textContent = "Es sind keine Waren im Einkaufswagen.";
+        cartContainer.appendChild(meldungElement);
+              }
+      else{
 for (let i = 0; i < cart.products.length; i++){
     const shopContainer = document.createElement("div");
 
@@ -110,6 +117,8 @@ for (let i = 0; i < cart.products.length; i++){
     imgElement.alt = "Product Image";
     imgElement.style.width = "5em";
 
+    //Erstelle eine Box für alles in der Infobox
+    const boxElement = document.createElement("div");
     // Erstelle ein Element für den Titel des i-ten Produkts
     const titleElement = document.createElement("h2");
     titleElement.textContent = `${cart.products[i].title}`;
@@ -123,13 +132,14 @@ for (let i = 0; i < cart.products.length; i++){
 
 
     shopContainer.appendChild(imgElement);
-    shopContainer.appendChild(titleElement);
-    shopContainer.appendChild(priceElement);
-    shopContainer.appendChild(quantityElement);
+    boxElement.appendChild(titleElement);
+    boxElement.appendChild(priceElement);
+    boxElement.appendChild(quantityElement);
+    shopContainer.appendChild(boxElement);
 
     // Füge den Produktcontainer dem Hauptcontainer auf der Seite hinzu
     cartContainer.appendChild(shopContainer);
-}
+}}
 })
 
 /*.catch((error) => {
