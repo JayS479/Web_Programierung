@@ -253,7 +253,7 @@ main > section.narrow > div > div {
     
 }
 
-#resultsContainer{
+.container{
     display: grid;
     grid-template-columns: repeat(1);
     justify-content: center;
@@ -261,14 +261,64 @@ main > section.narrow > div > div {
     margin-bottom: 10px;
     
 }
-#resultsContainer img{
+
+.container img{
     max-width: 100%;
     height: auto;
     justify-content: left;
     
 }
 
+#bildContainer{
+    background-color: blue;
+}
+#detailContainer{
+    background-color: red;
+    text-align: left;
+}
 
+
+
+/* Media Query für Bildschirmbreiten größer oder gleich 768px */
+@media (min-width: 768px) {
+           
+        .search-result {
+            max-width: 300px; /* Ändern Sie die maximale Breite nach Bedarf */
+            width: 100%;
+            height: 200px; /* Ändern Sie die Höhe nach Bedarf */
+            margin: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .detcontainer{
+            display: grid;
+            grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
+            gap: 75px;
+        }
+        #bildContainer{
+            background-color: blue;
+        }
+        #detailContainer{
+            background-color: red;
+            text-align: left;
+        }
+        #resultsContainer img{
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            display: block;
+            justify-content: left;
+       }
+       
+        
+    }
+    #resultsContainer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Flex-Container machen die Kinder (li) standardmäßig inline-flex */
+        flex-wrap: wrap;
+        }
 
 
 
