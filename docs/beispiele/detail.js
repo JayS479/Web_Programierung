@@ -4,7 +4,10 @@ const productID = urlParams.get("id");
 
 document.addEventListener("DOMContentLoaded", function () {
 const dataContainer = document.getElementById("detailContainer");
-const imgContainer = document.getElementById("bildContainer");
+const textContainer = document.getElementById("titleContainer");
+
+const carouselContainer = document.getElementById("carouselInner");
+const carouselCart = document.getElementById("carouselCart");
 const cartContainer = document.getElementById("cartContainer");
 
 const apiUrl = "https://dummyjson.com/products";
@@ -17,7 +20,38 @@ fetch(url)
 // Erstelle einen Container für das Produkt
 const productContainer = document.createElement("div");
 const picContainer = document.createElement("div");
+const textContainer = document.createElement("div");
 productContainer.classList.add("detail-result"); // CSS-Klasse für das Suchergebnis hinzufügen
+
+// Erstelle ein Bilder-Carousel-Element
+for (let i = 0; i < product.images.length-1; i++){
+    if(i == 0){
+    const firstItem = document.createElement("div");
+    firstItem.classList.add("carousel-item");
+    firstItem.classList.add("active");
+    const imgElement = document.createElement("img");
+    imgElement.classList.add("d-block");
+    imgElement.classList.add("w-100");
+    imgElement.src = product.images[i];
+    imgElement.alt = "Product Image " + i;
+    imgElement.style.width = "50px"; // Setze die Breite des Bildes nach Bedarf
+    firstItem.appendChild(imgElement);
+    carouselContainer.appendChild(firstItem);
+    console.log("1");
+    }else{
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    const imgElement = document.createElement("img");
+    imgElement.classList.add("d-block");
+    imgElement.classList.add("w-100");
+    imgElement.src = product.images[i];
+    imgElement.alt = "Product Image " + i;
+    imgElement.style.width = "50px"; // Setze die Breite des Bildes nach Bedarf
+    carouselItem.appendChild(imgElement);
+    carouselContainer.appendChild(carouselItem);
+    console.log("2");
+    }
+    }
 
 // Erstelle ein Bild-Element und setze die Quelle auf das Produktbild
 const imgElement = document.createElement("img");
@@ -94,7 +128,37 @@ for (let i = 0; i < cart.products.length; i++){
     cartContainer.appendChild(shopContainer);
 }
 })
-.catch((error) => {
+
+/*.catch((error) => {
 console.error("Error fetching product data:", error);
 });
+for (let i = 0; i < cart.products.length-1; i++){
+    if(i == 0){
+    const secondItem = document.createElement("div");
+    secondItem.classList.add("carousel-item");
+   secondItem.classList.add("active");
+    const bildElement = document.createElement("img");
+    bildElement.classList.add("d-block");
+    bildElement.classList.add("w-100");
+    bildElement.src = cart.products[i].thumbnail;
+    bildElement.alt = "Product Image " + i;
+   bildElement.style.width = "50px"; // Setze die Breite des Bildes nach Bedarf
+    secondItem.appendChild(bildElement);
+    carouselCart.appendChild(secondItem);
+    console.log("4");
+    }else{
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("carousel-item");
+    const bildElement = document.createElement("img");
+    bildElement.classList.add("d-block");
+    bildElement.classList.add("w-100");
+    bildElement.src = cart.products[i].thumbnail;
+    bildElement.alt = "Product Image " + i;
+    bildElement.style.width = "50px"; // Setze die Breite des Bildes nach Bedarf
+    cartItem.appendChild(bildElement);
+    carouselCart.appendChild(cartItem);
+    console.log("5");
+    }
+    }
+})*/
 });

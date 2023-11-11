@@ -1,36 +1,61 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const productID = urlParams.get("id");
+
 document.addEventListener("DOMContentLoaded", function () {
-  const searchbar = document.getElementById("searchbar");
-  const searchButton = document.getElementById("Search");
-  const dataContainer = document.getElementById("resultsContainer");
+const carouselContainer = document.getElementById("carouselContainer");
+const textContainer = document.getElementById("textContainer");
+const cartContainer = document.getElementById("cartContainer");
 
-  let assignedValue; // Hier wird der eingegebene Wert gespeichert
+const apiUrl = "https://dummyjson.com/products";
+let url = `https://dummyjson.com/products/${productID}`;
+let urlCart = `https://dummyjson.com/carts/${productID}`;
 
-  searchButton.addEventListener("click", function () {
-    const enteredValue = searchbar.value;
-    assignedValue = enteredValue;
+fetch(url)
+.then((response) => response.json())
+.then((product) => {
+// Erstelle einen Container für das Produkt
+const descriptionContainer = document.createElement("div");
+const carouselElement = document.createElement("div");
 
-    let url = `https://dummyjson.com/users/${assignedValue}/todos`;
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        
+// Erstelle ein Bilder-Carousel-Element
 
-        // Lösche den Container-Inhalt, um vorherige Suchergebnisse zu entfernen
-        dataContainer.innerHTML = "";
+carouselElement.classList.add("image-carousel");
+for (let i = 0; i < product.images.length; i++){
+const imgElement = document.createElement("img");
+imgElement.src = product.images[i];
+imgElement.alt = "Product Image " + i;
+imgElement.style.width = "30em"; // Setze die Breite des Bildes nach Bedarf
+carouselElement.appendChild(imgElement);
+}
 
-        if (data.todos) {
-          data.todos.forEach((todo) => {
-            const todoItem = document.createElement("div");
-            todoItem.textContent = `ID: ${todo.id}, Todo: ${todo.todo}`;
-            dataContainer.appendChild(todoItem);
-          });
-        } else {
-          dataContainer.textContent = "Keine Todos gefunden.";
-        }
-      })
-      .catch((error) =>
-        console.error("Fehler beim Abrufen der JSON-Daten: " + error)
-      );
-  });
-});
+
+// Erstelle ein Element für den Titel des Produkts
+const titleElement = document.createElement("h2");
+titleElement.textContent = `Titel: ${product.title}`;
+
+//Füge Description ein
+const descriptionElement = document.createElement("h2");
+descriptionElement.textContent = `Beschreibung: ${product.description}`;
+
+//Füge Description ein
+const priceElement = document.createElement("h2");
+priceElement.textContent = `Preis: ${product.price}`;
+
+//Füge Description ein
+const brandElement = document.createElement("h2");
+brandElement.textContent = `Marke: ${product.brand}`;
+
+// Füge das Bild-Element und den Titel dem Produktcontainer hinzu
+carouselContainer.appendChild(carouselElement);
+descriptionContainer.appendChild(titleElement);
+descriptionContainer.appendChild(descriptionElement);
+descriptionContainer.appendChild(priceElement);
+descriptionContainer.appendChild(brandElement);
+
+
+// Füge den Produktcontainer dem Hauptcontainer auf der Seite hinzu
+textContainer.appendChild(descriptionContainer);
+carouselContainer.appendChild(carouselElement);
+})

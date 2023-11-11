@@ -26,7 +26,7 @@
 /**
  * Allgemeine Definitionen
  */
-html, body {
+ html, body {
     margin: 0;
     padding: 0;
 }
@@ -172,26 +172,17 @@ header nav li {
 main > div > div >div{
     height: 2px;
  }
- #carouselMitFotos{
-    
-    height: 100%;
- }
 main {
     flex-grow: 1;
 }
 
-main > section {
+
+main > div {
     display: flex;
     justify-content: center;
 }
 
-main > section.carousel-inner > div > div {
-    display: flex;
-    justify-content: center;
-    width: 2px;
-    height: 2px;
-    max-width: 5%;
-}
+
 
 main > section.jumbotron {
     
@@ -239,17 +230,29 @@ main > section.narrow > div > div {
 
 }
 
-.search-result{
+.search-result {
     display: grid;
     grid-template-columns: repeat(1);
-    justify-content: center;
+    flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+    padding: 0.2em;
+    margin: 0.25em;
+    border: 1px solid rgb(200, 200, 200);
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
+    transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
+    position: center; /* Positionierung center setzen */
+    z-index: 1; /* Start-Z-Index */
     text-align: center;
-    margin-bottom: 10px;
     
-}
+    
+    
+    }
 .search-result img{
     max-width: 100%;
     height: auto;
+    
     
 }
 
@@ -276,49 +279,78 @@ main > section.narrow > div > div {
     background-color: red;
     text-align: left;
 }
+#resultsContainer .search-result:hover {
+    transform: scale(1.05);
+    z-index: 2; /* Z-Index beim Hovern auf 2 setzen, um über andere Elemente zu liegen */
+    }
 
+.carousel-inner img{
+    
+    height: auto;
+    max-height: 522pt;
+    max-width: auto;
+    display: flex;
+    
+}
 
+a.carousel-control-next{
+    background-color: #e9e7e7;
+    width: 8%;
+}
+a.carousel-control-prev{
+    background-color: #e9e7e7;
+    width: 8%;  
+}
 
 /* Media Query für Bildschirmbreiten größer oder gleich 768px */
 @media (min-width: 768px) {
            
         .search-result {
+            
             max-width: 300px; /* Ändern Sie die maximale Breite nach Bedarf */
             width: 100%;
             height: 200px; /* Ändern Sie die Höhe nach Bedarf */
             margin: 10px;
+            justify-content: center;
             box-sizing: border-box;
             overflow: hidden;
+
+            
         }
         .detcontainer{
             display: grid;
             grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
             gap: 75px;
+            
         }
-        #bildContainer{
-            background-color: blue;
-        }
-        #detailContainer{
+        
+        .textcontainer{
             background-color: red;
             text-align: left;
+            border: 5px solid #ccc;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+            box-sizing:content-box;
+            
         }
+
         #resultsContainer img{
             max-width: 100%;
             height: auto;
             max-height: 150px;
             display: block;
-            justify-content: left;
+            justify-content: center;
        }
-       
-        
-    }
-    #resultsContainer ul {
+       #resultsContainer ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex; /* Flex-Container machen die Kinder (li) standardmäßig inline-flex */
         flex-wrap: wrap;
+        justify-content: center;
         }
+        
+    }
+    
 
 
 

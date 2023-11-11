@@ -1,4 +1,32 @@
-html, body {
+/* =============================================================================
+ * HINWEIS ZU DIESER MUSTERLÖSUNG:
+ *
+ * Hier wird extrem viel mit dem FlexBox-Algorithmus (display: flex) gearbeitet,
+ * um mehrere Elemente nebeneinander anzuordnen, die Höhe und Breite der Elemente
+ * zu maximieren und diese zu zentrieren. Dadurch passt sich das Layout
+ * automatisch an die maximale Breite des Bildschirms an, ganz egal wie groß
+ * oder klein diese ist. (Reponsive ist das Layout deshalb aber noch nicht, da
+ * hierfür bei zu kleinen Bildschirmen auf klassische, übereinander gestapelte
+ * Layouts umgeschaltet werden müsste. Aber beachte, wie die Musterlösung
+ * harmonischer als das Original wirkt, da sich alle Elemente schön bündig
+ * links, mittig und rechts ausrichten).
+ *
+ * Letztlich ist das aber nur eine mögliche Lösung. Vor Einführung der FlexBox
+ * war es üblich, Layouts wie diese mit festen Größenangaben zu realisieren.
+ * Dies führt allerdings dazu, dass der nicht genutzte Bereich links und
+ * rechts vom Layout immer größer wird, je höher die Bildschirmauflösung ist,
+ * da die Breite ja immer gleich bleibt. Wollte man trotzdem anstelle von
+ * FlexBox immer noch so arbeiten, könnte man heute die Größenangaben in `vw`
+ * und `vh` vornehmen, um sierelativ zur Breite oder Höhe des Browsers
+ * (Viewports) zu definieren.
+ *
+ * Es gilt also wie so oft in der Webentwicklung: Viele Wege führen nach Rom.
+ * ============================================================================= */
+
+/**
+ * Allgemeine Definitionen
+ */
+ html, body {
     margin: 0;
     padding: 0;
 }
@@ -141,29 +169,20 @@ header nav li {
  * Hauptbereich
  */
 
- main > div > div >div{
+main > div > div >div{
     height: 2px;
- }
- #carouselMitFotos{
-    
-    height: 100%;
  }
 main {
     flex-grow: 1;
 }
 
-main > section {
+
+main > div {
     display: flex;
     justify-content: center;
 }
 
-main > section.carousel-inner > div > div {
-    display: flex;
-    justify-content: center;
-    width: 2px;
-    height: 2px;
-    max-width: 5%;
-}
+
 
 main > section.jumbotron {
     
@@ -211,7 +230,33 @@ main > section.narrow > div > div {
 
 }
 
-#resultsContainer{
+.search-result {
+    display: grid;
+    grid-template-columns: repeat(1);
+    flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+    padding: 0.2em;
+    margin: 0.25em;
+    border: 1px solid rgb(200, 200, 200);
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
+    transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
+    position: center; /* Positionierung center setzen */
+    z-index: 1; /* Start-Z-Index */
+    text-align: center;
+    
+    
+    
+    }
+.search-result img{
+    max-width: 100%;
+    height: auto;
+    
+    
+}
+
+.container{
     display: grid;
     grid-template-columns: repeat(1);
     justify-content: center;
@@ -219,13 +264,81 @@ main > section.narrow > div > div {
     margin-bottom: 10px;
     
 }
-#resultsContainer img{
+
+.container img{
     max-width: 100%;
     height: auto;
     justify-content: left;
     
 }
 
+#bildContainer{
+    background-color: blue;
+}
+#detailContainer{
+    background-color: red;
+    text-align: left;
+}
+#resultsContainer .search-result:hover {
+    transform: scale(1.05);
+    z-index: 2; /* Z-Index beim Hovern auf 2 setzen, um über andere Elemente zu liegen */
+    }
+
+
+
+/* Media Query für Bildschirmbreiten größer oder gleich 768px */
+@media (min-width: 768px) {
+           
+        .search-result {
+            
+            max-width: 300px; /* Ändern Sie die maximale Breite nach Bedarf */
+            width: 100%;
+            height: 200px; /* Ändern Sie die Höhe nach Bedarf */
+            margin: 10px;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+
+            
+        }
+        .detcontainer{
+            display: grid;
+            grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
+            gap: 75px;
+        }
+        #bildContainer{
+            background-color: blue;
+            border: 2px solid #ccc;
+            box-sizing:content-box;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+            box-sizing: border-box;
+        }
+        .textcontainer{
+            background-color: red;
+            text-align: left;
+            border: 5px solid #ccc;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+            box-sizing:content-box;
+        }
+
+        #resultsContainer img{
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            display: block;
+            justify-content: center;
+       }
+       #resultsContainer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Flex-Container machen die Kinder (li) standardmäßig inline-flex */
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        
+    }
+    
 
 
 
