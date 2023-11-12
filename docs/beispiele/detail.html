@@ -6,30 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="Index.css" />
     <script src="detail.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
-    <style>
-      <!--
-          /* Regel um Breite von Container zu visualisieren */
-          /* .container-sm { background-color: yellow;} */
-      -->
-    </style>
   </head>
-  <body>
+<body>
     <!-- Kopfbereich mit Navigation und Suche -->
     <header>
       <nav class="max-width">
@@ -48,47 +37,38 @@
     </header>
 
     <!-- Hauptbereich mit dem Jumbotron -->
-    <main>
-      <section class="container">
+  <main>
+    <section class="container">
+      
       <section class="detcontainer">
-        <section classe=""Hurensohn">
-          
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-<!-- Inhalt des Karussells -->
-<div id="carouselInner" class="carousel-inner">
-</div>
-
-<!-- Steuerbuttons -->
-<a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-<span class="visually-hidden">Zurück</span>
-</a>
-<a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-<span class="carousel-control-next-icon" aria-hidden="true"></span>
-<span class="visually-hidden">Weiter</span>
-</a>
-</div>
-</section>
-            
-          </div>
-        <section class="textcontainer">
-          
-          <div id="titleContainer">
-            <!-- Hier werden die JSON-Daten angezeigt -->
-            
-          </div>
-          <div id="detailContainer">
-            <!-- Hier werden die JSON-Daten angezeigt -->
-            
+        
+        <section classe="carouselBox">
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselInner" class="carousel-inner"></div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Zurück</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Weiter</span>
+            </a>
           </div>
         </section>
+          
+        <section class="textcontainer">
+          <div id="titleContainer"></div>
+          <div id="detailContainer"></div>
+        </section>
       </section >
-        <section class="shoppingcart">
-          In Ihrem Einkaufswagen
-          <div id="cartContainer">
-          </section>
+
+      <section class="shoppingcart">
+      In Ihrem Einkaufswagen
+        <div id="cartContainer">
+      </section>
+
     </section>
-   </main>
+  </main>
 
     <!-- Fußbereich mit weiterer Navigation -->
     <footer>

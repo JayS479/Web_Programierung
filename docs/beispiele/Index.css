@@ -1,28 +1,3 @@
-/* =============================================================================
- * HINWEIS ZU DIESER MUSTERLÖSUNG:
- *
- * Hier wird extrem viel mit dem FlexBox-Algorithmus (display: flex) gearbeitet,
- * um mehrere Elemente nebeneinander anzuordnen, die Höhe und Breite der Elemente
- * zu maximieren und diese zu zentrieren. Dadurch passt sich das Layout
- * automatisch an die maximale Breite des Bildschirms an, ganz egal wie groß
- * oder klein diese ist. (Reponsive ist das Layout deshalb aber noch nicht, da
- * hierfür bei zu kleinen Bildschirmen auf klassische, übereinander gestapelte
- * Layouts umgeschaltet werden müsste. Aber beachte, wie die Musterlösung
- * harmonischer als das Original wirkt, da sich alle Elemente schön bündig
- * links, mittig und rechts ausrichten).
- *
- * Letztlich ist das aber nur eine mögliche Lösung. Vor Einführung der FlexBox
- * war es üblich, Layouts wie diese mit festen Größenangaben zu realisieren.
- * Dies führt allerdings dazu, dass der nicht genutzte Bereich links und
- * rechts vom Layout immer größer wird, je höher die Bildschirmauflösung ist,
- * da die Breite ja immer gleich bleibt. Wollte man trotzdem anstelle von
- * FlexBox immer noch so arbeiten, könnte man heute die Größenangaben in `vw`
- * und `vh` vornehmen, um sierelativ zur Breite oder Höhe des Browsers
- * (Viewports) zu definieren.
- *
- * Es gilt also wie so oft in der Webentwicklung: Viele Wege führen nach Rom.
- * ============================================================================= */
-
 /**
  * Allgemeine Definitionen
  */
@@ -32,23 +7,13 @@
 }
 
 html {
-    /* Bunte Streifen oben und unten. Der Trick ist hier, dass dem <html>-
-     * Element ein Farbverlauf aus Hintergrund gegeben wird, der dadurch
-     * automatisch die gesamte Seite ausfüllt. Der eigentliche Inhalt der
-     * Seite im <body> wird durch den Flexbox-Algorithmus so angeordnet,
-     * dass dieser mindestens den gesamten Bildschirm abzüglich 0.6em Padding
-     * oben und unten ausfüllt, selbst wenn der <body> gar keinen Inhalt
-     * besitzt. Die Hintergrundfarbe des <body> wird daher auf weiß gesetzt,
-     * um den Farbverlauf in der Mitte zu überdecken.
-     */
-     background: rgb(17, 112, 221);
-     background: linear-gradient(90deg, rgb(85, 221, 17) 0%, rgb(255, 9, 144) 45%, rgb(0, 60, 255) 100%);
-
+    /* Bunte Streifen oben und unten.*/
+    background: rgb(17, 112, 221);
+    background: linear-gradient(90deg, rgb(85, 221, 17) 0%, rgb(255, 9, 144) 45%, rgb(0, 60, 255) 100%);
     min-height: 100%;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
 }
@@ -56,45 +21,23 @@ html {
 body {
     font-family: sans-serif;
     font-size: 12pt;
-
     flex-grow: 1;
     background-color: white;
 
-    /* Flexbox, um den Footer nach unten zu drücken, auch wenn im <main>
-     * zu wenig oder kein Inhalt steht. Das <main> besitzt hierzu passend
-     * noch die Anweisung "flex-grow: 1", um Header und Footer auseinander
-     * zu drücken.
-     */
+    /* Flexbox, um den Footer nach unten zu drücken.*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 }
 
-a, a:visited {
-    color: black;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.bold {
-    font-weight: bold;
-}
-
+  
+    /*Linie zwischen Header und Main*/
 .line {
     padding: 0;
     border: 0px solid lightgrey;
     border-bottom-width: 1px;
 }
-
-.max-width {
-    max-width: 75vw;
-    margin: 0 auto;
-}
-
 /**
  * Kopfbereich
  */
@@ -104,66 +47,50 @@ header > * {
     padding-bottom: 1em;
         
 }
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-   
-}
-
-header nav li {
-    display: inline;
-    padding-left: 1em;
-    font-weight: bold;
-}
-
-
+    /*Formatierung Header*/ 
 .max-width {
     display: flex;
     justify-content: space-between;
+    max-width: 75vw;
+    margin: 0 auto;
 
 }
-
+    /*Suchleiste Formatierung*/
 .max-width input {
     border: 0px solid transparent;
     background-color: #f0f0f0;
     padding: 1em;
-
     flex-grow: 1;
 }
 
+    /**Buttons**/
+    /*Formatierung Button Startseite*/
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    padding-left: 1em;
+    font-weight: bold;
+}
+    /* Beschriftungsfarbe von Button Startseite*/
+a, a:visited {
+    color: black;
+    text-decoration: none;
+}
+    /*Button Suche Formatierung*/
 .max-width button {
     border: 0px solid transparent;
     background: none;
-
     padding-left: 1.5em;
     padding-right: 1.5em;
-
     font-weight: bold;
-}
-
-.max-width button.black {
     background: black;
     color: white;
     margin-right: 2em;
 }
 
-.max-width button.white {
-    background: white;
-    color: black;
-    border: 1px solid lightgrey;
-}
-
-.max-width button.transparent {
-    padding-right: 0;
-}
+    
 
 /**
  * Hauptbereich
@@ -210,16 +137,16 @@ main > section.jumbotron p {
     color: fuchsia;
     border: black;
 }
-/* FAQ-Bereich */
+/* Fragen-Bereich */
 
 
-.faq {
+.fragen {
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between; 
 }
 
-.faq div {
+.fragen div {
 margin-bottom: 20px; 
 box-sizing: border-box;
 }
@@ -483,6 +410,11 @@ footer {
 
     padding-top: 3em;
     padding-bottom: 3em;
+}
+/*Überschriften der Bereiche
+*/
+.bold {
+    font-weight: bold;
 }
 
 footer > div {
