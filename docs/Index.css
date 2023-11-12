@@ -7,7 +7,7 @@
 }
 
 html {
-    /* Bunte Streifen oben und unten.*/
+/* Bunte Streifen oben und unten.*/
     background: rgb(17, 112, 221);
     background: linear-gradient(90deg, rgb(85, 221, 17) 0%, rgb(255, 9, 144) 45%, rgb(0, 60, 255) 100%);
     min-height: 100%;
@@ -17,22 +17,20 @@ html {
     display: flex;
     flex-direction: column;
 }
-
+/*Formatierung des Ganzen Körpers*/
 body {
     font-family: sans-serif;
     font-size: 12pt;
     flex-grow: 1;
     background-color: white;
-
-    /* Flexbox, um den Footer nach unten zu drücken.*/
-    display: flex;
+    display: flex; /* Flexbox, um den Footer nach unten zu drücken.*/
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 }
 
   
-    /*Linie zwischen Header und Main*/
+/*Linie zwischen Header und Main*/
 .line {
     padding: 0;
     border: 0px solid lightgrey;
@@ -47,7 +45,7 @@ header > * {
     padding-bottom: 1em;
         
 }
-    /*Formatierung Header*/ 
+/*Formatierung Header*/ 
 .max-width {
     display: flex;
     justify-content: space-between;
@@ -55,7 +53,7 @@ header > * {
     margin: 0 auto;
 
 }
-    /*Suchleiste Formatierung*/
+/*Suchleiste Formatierung*/
 .max-width input {
     border: 0px solid transparent;
     background-color: #f0f0f0;
@@ -63,8 +61,8 @@ header > * {
     flex-grow: 1;
 }
 
-    /**Buttons**/
-    /*Formatierung Button Startseite*/
+/**Buttons**/
+/*Formatierung Button Startseite*/
 header nav ul {
     list-style: none;
     padding: 0;
@@ -73,12 +71,12 @@ header nav ul {
     padding-left: 1em;
     font-weight: bold;
 }
-    /* Beschriftungsfarbe von Button Startseite*/
+/* Beschriftungsfarbe von Button Startseite*/
 a, a:visited {
     color: black;
     text-decoration: none;
 }
-    /*Button Suche Formatierung*/
+/*Button Suche Formatierung*/
 .max-width button {
     border: 0px solid transparent;
     background: none;
@@ -96,109 +94,43 @@ a, a:visited {
  * Hauptbereich
  */
 
-main > div > div >div{
-    height: 2px;
- }
 main {
     flex-grow: 1;
+    max-width: 100%;
 }
-
-
-main > div {
-    display: flex;
-    justify-content: center;
-}
-
-
-
-main > section.jumbotron {
-    
-    background-position: center;
-
-    color: white;
-    text-align: center;
-    margin: 0%;
-    padding: 0%;
-
-   
-}
-
-main > section.jumbotron > div {
-    max-width: 35em;
-}
-
-main > section.jumbotron h2 {
-    font-size: 200%;
-    color: rgb(0, 0, 255);
-    border: black;
-}
-main > section.jumbotron p {
-    font-size: 100%;
-    color: fuchsia;
-    border: black;
-}
-/* Fragen-Bereich */
-
-
-.fragen {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between; 
-}
-
-.fragen div {
-margin-bottom: 20px; 
-box-sizing: border-box;
-}
-main > section.narrow > div {
-    display: contents;
-    font-weight: bold;
-    font-size: 100%;
-    
-    padding: 10em
-
-    max-width: 15em;
-    
-    
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-main > section.narrow > div > div {
-    margin: 1em;
-    width: 50%;
-
-}
-
-
+/*Suchergebnisse Formatiert*/
 .search-result {
     display: grid;
     grid-template-columns: repeat(1);
-    flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+    flex: 1 0 calc(100% - 1em);
     padding: 0.2em;
     margin: 0.25em;
     border: 1px solid rgb(200, 200, 200);
     background: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
-    overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
-    transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
-    position: center; /* Positionierung center setzen */
-    z-index: 1; /* Start-Z-Index */
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    position: center;
+    z-index: 1; 
     text-align: center;
     justify-content: center;
     height: 200px;
-          
-    
-    
     }
+/*Suchergebnisbilder Formatiert*/
 .search-result img{
     max-width: 100%;
     height: auto;
     max-height: 120px;
-    
-    
 }
-
+/*Hover für dei Resultergebinsse*/
+#resultsContainer .search-result:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    }
+/*Formatierung Detailseite
+*/
+/*Detailseite Container für alle von JS Übergebenen Elemente*/
 .container{
     display: grid;
     grid-template-columns: repeat(1);
@@ -207,60 +139,23 @@ main > section.narrow > div > div {
     margin-bottom: 10px;
     
 }
-
-.container img{
-    max-width: 100%;
-    height: auto;
-    justify-content: left;
-    
-}
-
-#bildContainer{
-    background-color: blue;
-}
+/*Container für die Dateilansicht des Carousells und des Beschreibungstextes*/
 .detcontainer{
     margin-top: 25px;
 }
-#detailContainer{
-    
-    text-align: left;
-    max-width: 100%;
-    padding-right: 10%;
-    
-    
-}
-.textcontainer{
-    text-align: left;
-    border: 5px solid #ccc;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-    box-sizing:content-box;
-    
-}
-.textcontainer h1{
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-.textcontainer h2{
-    text-align: left;
-    
-    margin-bottom: 15px;
-}
-
-#resultsContainer .search-result:hover {
-    transform: scale(1.05);
-    z-index: 2; /* Z-Index beim Hovern auf 2 setzen, um über andere Elemente zu liegen */
-    }
-
+/*Carouselformatierung*/
+#carouselInner{
+    width: auto;
+    height: 400px;
+    margin-bottom: 25px; 
+}    
 .carousel-inner img{
-    
     height: auto;
     max-height: 522pt;
     max-width: auto;
     display: flex;
-    
 }
-
+/*Carousel Button zum Bilderwechsel*/
 a.carousel-control-next{
     background-color: #e9e7e7;
     width: 8%;
@@ -269,145 +164,162 @@ a.carousel-control-prev{
     background-color: #e9e7e7;
     width: 8%;  
 }
-
-.carousel-inner{
-    margin-bottom: 25px;    
+/*Beschreibungsblock*/
+#detailContainer{
+    text-align: left;
+    max-width: 100%;
+    padding-right: 10%;
+    border: 5px solid #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    box-sizing:content-box; 
+    height: auto; 
 }
-#carouselInner{
-    width: auto;
-    height: 400px;
+/*Beschreibungsblock Überschrift und Unterpunkte*/
+#detailContainer h1{
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
-
+#detailContainer h2{
+    text-align: left;
+    margin-bottom: 15px;
+}
+/*Formatierung für den Einkaufswagen*/
 .shoppingcart  {
     font-size: 25pt;
-    margin-top: 25px;
-    
-    
+    margin-top: 25px;    
 }
+/*Einzelnen Felder von den Produkten im Einkaufswagen*/
 #cartContainer div{
-    flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
-padding: 0.2em;
-margin: 0.25em;
-border: 1px solid rgb(200, 200, 200);
-background: white;
-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-box-sizing: border-box;
-overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
-transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
-/*position: center; /* Positionierung center setzen */
-z-index: 1; /* Start-Z-Index */
-text-align: center;
-position: relative;
-justify-content: space-between;
-height: auto;
+    flex: 1 0 calc(100% - 1em);
+    padding: 0.2em;
+    margin: 0.25em;
+    border: 1px solid rgb(200, 200, 200);
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;   
+    z-index: 1;
+    text-align: center;
+    height: auto;
 }
+/*Feld mit der Beschreiung des Produkts im EInkaufswagen*/
 #cartContainer div div{
     background-color: rgba(233, 233, 233, 0.877);
     margin: 2px;
-    
-    margin-top: 10%;
-    position: absolute;
-  bottom: 0;
-  left: 0; /* Optional: Setzt left auf 0, wenn der Container von links positioniert werden soll */
-  width: 100%;
-  justify-content: space-between;
-  padding: 10px; /* Optional: Fügt Raum um den Inhalt hinzu */
-  box-sizing: border-box;
+    bottom: 0;
+    left: 0; /* Optional: Setzt left auf 0, wenn der Container von links positioniert werden soll */
+    width: 100%;
+    padding: 10px; /* Optional: Fügt Raum um den Inhalt hinzu */
+    box-sizing: border-box;
 }
+/*Farbe von Hinweistext, falls nichts im Warenkorb ist*/
 #cartContainer h5{
     background-color: red;
     margin: 2px;
 }
 
+/*Hilfebereich*/
+/*Formatierung Fragen*/
+    .fragen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    }
+    .fragen div {
+    margin-bottom: 20px; 
+    box-sizing: border-box;
+    }
 
-/* Media Query für Bildschirmbreiten größer oder gleich 768px */
-@media (min-width: 800px) {
-           
-        .search-result {
-            max-width: 450px; /* Ändern Sie die maximale Breite nach Bedarf */
-            width: 100%;
-            height: 250px; /* Ändern Sie die Höhe nach Bedarf */
-            margin: 10px;
-            justify-content: center;
-            box-sizing: border-box;
-            overflow: hidden;
-
-            
-        }
-        .detcontainer{
-            display: grid;
-            grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
-            gap: 75px;
-            margin-top: 10%;
-            margin-bottom: 20%;
-            height: 400px;
-            
-        }
-        #carouselInner{
-            width: auto;
-            height: 400px;
-        }
-
-        #resultsContainer img{
-            max-width: 100%;
-            height: auto;
-            max-height: 150px;
-            display: block;
-            justify-content: center;
-       }
-       #resultsContainer ul {
+/* Media Query für Bildschirmbreiten größer oder gleich 987px */
+@media (min-width: 987px) {
+/*Formatierung der Suchergebisse*/ 
+    .search-result {
+        max-width: 450px; /* Ändern Sie die maximale Breite nach Bedarf */
+        width: 100%;
+        height: 250px; /* Ändern Sie die Höhe nach Bedarf */
+        margin: 10px;
+        justify-content: center;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+/*Der Gesamte Container mit allen Suchergebissen*/
+    #resultsContainer ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex; /* Flex-Container machen die Kinder (li) standardmäßig inline-flex */
         flex-wrap: wrap;
         justify-content: center;
-        }
-        #cartContainer {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px; /* Optional: Fügt Abstand zwischen den Spalten hinzu */
-            
-        }
-        
-        #cartContainer div{
-            flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
-            padding: 0.2em;
-            margin: 0.25em;
-            margin-right: 10px;
-            border: 1px solid rgb(200, 200, 200);
-            background: white;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-            box-sizing: border-box;
-            overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
-            transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
-            position: center; /* Positionierung center setzen */
-            z-index: 1; /* Start-Z-Index */
-            text-align: center;
-            
-            height: auto;
-            
-        }
-        
-        
-        .shoppingcart  {
-            font-size: 40pt;
-        
-        }
-        
-        
     }
-    
+/*Bildformatierung der Produkte aus der Suche*/
+    #resultsContainer img{
+        max-width: 100%;
+        height: auto;
+        max-height: 150px;
+        display: block;
+        justify-content: center;
+   }
+/*Container von allen aus JS Übergeben Dateien auf der Detailseite*/
+    .container{
+        max-width: 100%;
+    }
+/*Containerformatierung von Detailansicht des Produkts*/
+    .detcontainer{
+        display: grid;
+        grid-template-columns: 30% 70%; /* Aufteilung der Spaltenbreiten */
+        gap: 75px;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        height: 400px;
+    }
+/*Container für den Beschreibungstext*/
+    #detailContainer{
+        max-width: 80%;
+    }
+/*Carouselbeschreibung*/
+    #carouselInner{
+        width: auto;
+        height: 400px;
+    }
 
-
+/*Container mit allen Produkten aus dem Einkaufswagen*/
+    #cartContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px; /* Optional: Fügt Abstand zwischen den Spalten hinzu */
+    }
+/*Für die Formatierung von dem Einkaufwagen mit Überschrift*/
+    .shoppingcart  {
+        font-size: 40pt;
+    }  
+/*Einzelnen Felder von den Produkten im Einkaufswagen*/
+    #cartContainer div{
+        flex: 1 0 calc(100% - 1em); /* Drittel der Breite mit Platz zwischen den Elementen */
+        padding: 0.2em;
+        margin: 0.25em;
+        margin-right: 10px;
+        border: 1px solid rgb(200, 200, 200);
+        background: white;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        overflow: hidden; /* Sorgt dafür, dass der Hover-Effekt nicht über den Rahmen hinausragt */
+        transition: transform 0.2s ease-in-out; /* Übergang für den Zoom-Effekt */
+        position: center; /* Positionierung center setzen */
+        z-index: 1; /* Start-Z-Index */
+        text-align: center;
+        height: auto;
+    }
+}
 
 /**
  * Fußbereich
  */
+ /*Formatierung Fußbereich*/
 footer {
     background-color: #f0f0f0;
     box-shadow: 0px -2px 3px rgba(0,0,0, 0.25);
-
     padding-top: 3em;
     padding-bottom: 3em;
 }
@@ -416,17 +328,17 @@ footer {
 .bold {
     font-weight: bold;
 }
-
+/*Formatierung aller Elemente im Footer*/
 footer > div {
     display: flex;
     justify-content: space-between;
 }
-
+/*Formatierung der einzelnen Spalten im Footer*/
 footer ul {
     list-style: none;
     padding: 0;
 }
-
+/*Formatierung der einzelnen Elemente im Footer*/
 footer li {
     margin-bottom: 1.5em;
 }

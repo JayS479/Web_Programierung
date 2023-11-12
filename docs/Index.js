@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const searchResults = document.getElementById("resultsContainer"); //Referenzen zu den HTML-Elementen
+//Referenzen zu den HTML-Elementen
+  const searchResults = document.getElementById("resultsContainer"); 
   const searchInput = document.getElementById("searchbar");
   const searchButton = document.getElementById("search");
 
-  let products = []; // Hier speichern wir alle Produkte, die wir von der API erhalten
-  const apiUrl = "https://dummyjson.com/products"; //URL der API, von der die Daten abgerufen werden sollen
+//URL der API, von der die Daten abgerufen werden sollen
+  const apiUrl = "https://dummyjson.com/products"; 
   fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
@@ -19,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Fehler beim Abrufen der Daten:", error);
     });
 
-
-
-  // Funktion zum Ausführen der Suche
+// Funktion zum Ausführen der Suche
   function performSearch() {
     const searchTerm = searchInput.value.toLowerCase().trim(); // Hole den Suchbegriff und trimme ihn
     const filteredProducts = products.filter((product) =>
@@ -29,16 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     displaySearchResults(filteredProducts); // Zeige nur gefilterte Produkte an
   }
-  // Event-Listener für den Suchbutton
+// Event-Listener für den Suchbutton
 
   searchButton.addEventListener("click", performSearch);
-  // Event-Listener für die Eingabe im Suchfeld
-// searchInput.addEventListener("input", performSearch);
-  // Funktion zum Navigieren zur Detailseite
+// Funktion zum Navigieren zur Detailseite
   function navigateToDetailPage(productId) {
     window.location.href = `detail.html?id=${productId}`;
   }
-  // Event-Listener für das Klicken auf Suchergebnisse
+// Event-Listener für das Klicken auf Suchergebnisse
   searchResults.addEventListener("click", function (event) {
     const clickedItem = event.target.closest(".search-result"); // Das geklickte Suchergebnis finden
     if (clickedItem) {
@@ -46,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navigateToDetailPage(productId); // Navigiere zur Detailseite mit der ausgewählten Produkt-ID
     }
   });
+//Funktion, um die Ergebnisse der Suche anzuzeigen.
   function displaySearchResults(productsToDisplay) {
     searchResults.innerHTML = "";
     if (!Array.isArray(productsToDisplay) || productsToDisplay.length === 0) {
@@ -62,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Erstelle ein <span>-Element für den Produktnamen
       const productName = document.createElement("span");
       productName.textContent = product.title;
-       // Erstelle ein <span>-Element für den Produktnamen
-       const productPrice = document.createElement("h2");
-       productPrice.textContent = product.price +"€";
+      // Erstelle ein <span>-Element für den Produktnamen
+      const productPrice = document.createElement("h2");
+      productPrice.textContent = product.price + "€";
       listItem.setAttribute("data-product-id", product.id); // Produkt-ID als Datenattribut hinzufügen
       listItem.appendChild(productImage); // Füge das Bild zum Listenelement hinzu
       listItem.appendChild(productName); // Füge den Produktnamen zum Listenelement hinzu
@@ -73,14 +71,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     searchResults.appendChild(resultList); // Füge die Ergebnisliste zu den Suchergebnissen hinzu
   }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleMenuButton = document.getElementById("toggleMenu");
-  const menuLinks = document.querySelector(".menu-links");
-  toggleMenuButton.addEventListener("click", function () {
-    menuLinks.classList.toggle("active");
-  });
 });
