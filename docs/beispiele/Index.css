@@ -259,7 +259,7 @@ main > section.narrow > div > div {
     z-index: 1; /* Start-Z-Index */
     text-align: center;
     justify-content: center;
-    height: 150px;
+    height: 200px;
           
     
     
@@ -319,6 +319,7 @@ main > section.narrow > div > div {
     
     margin-bottom: 15px;
 }
+
 #resultsContainer .search-result:hover {
     transform: scale(1.05);
     z-index: 2; /* Z-Index beim Hovern auf 2 setzen, um über andere Elemente zu liegen */

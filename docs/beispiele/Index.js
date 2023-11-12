@@ -62,9 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Erstelle ein <span>-Element für den Produktnamen
       const productName = document.createElement("span");
       productName.textContent = product.title;
+       // Erstelle ein <span>-Element für den Produktnamen
+       const productPrice = document.createElement("h2");
+       productPrice.textContent = product.price +"€";
       listItem.setAttribute("data-product-id", product.id); // Produkt-ID als Datenattribut hinzufügen
       listItem.appendChild(productImage); // Füge das Bild zum Listenelement hinzu
       listItem.appendChild(productName); // Füge den Produktnamen zum Listenelement hinzu
+      listItem.appendChild(productPrice);
       resultList.appendChild(listItem); // Füge das Listenelement zur Ergebnisliste hinzu
     });
     searchResults.appendChild(resultList); // Füge die Ergebnisliste zu den Suchergebnissen hinzu
